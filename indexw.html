@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expo Construction</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <style>
+    body {
+      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Navbar */
+    .navbar {
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar.scrolled {
+      background-color: rgba(0, 0, 0, 0.9) !important;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url(/assets/icon/hero.jpeg) center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .About {
+    scroll-margin-top: 360px;              
+    /* offset equal to your navbar height */
+}
+
+.accordion-item{
+  background-color:#e9edc9 ;
+}
+.Service img {
+    transition: 0.5s;
+}
+ul li {
+    list-style-type: none
+}
+
+  /* CONTACT */
+  #contact{margin-top:6px}
+  .form-wrap{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+  .form-column{background:var(--card);padding:18px;border-radius:12px;box-shadow: 0 6px 20px rgba(15,23,36,0.04)}
+  label{display:block;font-size:13px;color:#334155;margin-bottom:6px;font-weight:600}
+  input[type="text"],input[type="email"],textarea{
+    width:100%;padding:10px;border-radius:8px;border:1px solid rgba(15,23,36,0.08);font-size:14px;background:transparent;
+  }
+  textarea{resize:vertical;min-height:110px}
+  .error{color:#b91c1c;font-size:13px;margin-top:6px;display:none}
+
+    /* Section Titles */
+    section h2 {
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    Footer
+    footer {
+      background-color: #111;
+    }
+
+    
+  </style>
+  <!-- ANIMATE STYLE -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <!-- AOS -->
+     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top animate_animated animate__fadeInDown">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Visi Digital.</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">services</a></li>
+           <li class="nav-item"><a class="nav-link" href="#aboutus">about us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#layanan">contact</a></li>
+          <!-- <li class="nav-item"><a class="nav-link" href="#footer">Kontak</a></li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h1 class="display-5 fw-bold animate_animated animate__fadeInUp animate__delay-1s">Solusi Digital Terintegrasi </h1>
+       <h1 class="display-5 fw-bold">untuk Pertumbuhan Bisnis Anda</h1>
+      <p class="lead mb-4">Membantu Perusahaan Bertumbuh dengan Teknologi yang Efisien.</p>
+      <a href="#project" class="btn btn-primary me-2">Join With Us</a>
+      <a href="#layanan" class="btn btn-outline-light">About Us</a>
+    </div>
+  </section>
+
+
+  <!-- About -->
+   <!-- About -->
+ <div class="About" id="About">
+    <div class="container-fluid">
+        <!-- 992 ke atas 2 kolom, di bawah itu 1 kolom -->
+        <div class="row row-cols-lg-2 row-cols-1">
+            <div class="col bg-dark bg-gradient text-white text-center py-5">
+                <h2>2000+</h2>
+                <h2>Projects Selesai</h2>
+                <p class="mb-4 text-white-50"> Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="col bg-black bg-gradient text-white text-center py-5">
+                <h2>250+</h2>
+                <h2>Perusahaan Bekerjasama</h2>
+                <p class="mb-4 text-white-50">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+        </div>
+    </div>
+ </div>
+
+ <!-- Project -->
+  <div class="alumni">
+   <h3 class="kerja-alumni"> perusahaan tempat siswa magang dan alumni kami bekerja</h3>
+           
+  </div>
+    <div class="perusahaan-alumni">
+      <img src="https://tse3.mm.bing.net/th/id/OIP.-BCbeYjmFNtam9Gps51IyQHaDF?pid=Api&P=0&h=180" alt="">
+      <img src="https://tse4.mm.bing.net/th/id/OIP.xNooNb8qvBDF9_y6pyPIoQHaEK?pid=Api&P=0&h=180" alt="">
+      <img src="https://tse4.mm.bing.net/th/id/OIP.J_oibwdIllFbXd60sezgHQHaBm?pid=Api&P=0&h=180" alt="">
+      <img src="https://tse3.mm.bing.net/th/id/OIP.-Gs83fNgoinpq7cUaMhRqQHaEK?pid=Api&P=0&h=180" alt="">
+      <h3 class="dll">dan 40+ Perusahaan lainnya</h3>
+    </div>
+
+          
+       
+
+ <!-- Service
+  <div class="Service" id="Service">
+    <div class="container-xl">
+      <div class="row">
+      <div class="col">
+        <h1 class="fw-bold">Konsultasi<br>Dengan Kami<h1>
+      </div>
+    </div>
+    <hr>
+    <div class="row row-cols-lg-2 row-cols-1">
+      <div class="col d-flex">
+        <img src="/asset/img/Screenshot 2025-11-26 150645.png" alt="" class="w-50 me-1">
+      </div>
+      <div class="center">
+        <ul>
+          <li class="my-4"><h5><i class="fa-regular fa-circle-check text-success"></i>&nbsp;✅Bekerjasama dengan Design Hebat </h5></li>
+          <li class="my-4"><h5><i class="fa-regular fa-circle-check text-success"></i>&nbsp;✅Alat dan SDM yang Berkualitas serta Berpengalaman</h5></li>
+          <li class="my-4"><h5><i class="fa-regular fa-circle-check text-success"></i>&nbsp;✅Tersedia Produk - Produk Interior</h5></li>
+          <li class="my-4"><h5><i class="fa-regular fa-circle-check text-success"></i>&nbsp;✅90% Dapat Mengerjakan Project sesuai Target</h5></li>
+          <li class="my-4"><h5><i class="fa-regular fa-circle-check text-success"></i>&nbsp;✅Harga yang Terjangkau</h5></li>
+        </ul>
+      </div>
+    </div>
+    </div>
+  </div>
+  <hr> -->
+
+  <!-- FAQ
+   <div class="FAQ" id="FAQ">
+    <div class="container-xl">
+      <div class="row">
+        <div class="col">
+          <h1 class="fw-bold">Pertanyaan<br> Yang Biasa di Tanyakan<h1></h1>
+        </div>
+      </div>
+      <hr>
+      <div class="row row-cols-lg-2 row-cols-1">
+        <div class="col-my-3">
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button bg-dark bg-gradient text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Bagaimana Cara Daftarnya?</button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the first item’s accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-my-3">
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button bg-dark bg-gradient text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">Apakah Ada Forum Diskusi</button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the first item’s accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-my-3">
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button bg-dark bg-gradient text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">Berapa DP Pembangunanya</button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse show " data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the first item’s accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-my-3">
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button bg-dark bg-gradient text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">Apakah Produk-Produk Interiornya Mahal?</button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse show " data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the first item’s accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-my-3">
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button bg-dark bg-gradient text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">Apakah Sudah Terverifikasi?</button>
+              </h2>
+              <div id="collapseFive" class="accordion-collapse collapse show " data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the first item’s accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-my-3">
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button bg-dark bg-gradient text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">Apakah Dapat Menawar Harga?</button>
+              </h2>
+              <div id="collapseSix" class="accordion-collapse collapse show " data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>This is the first item’s accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+   </div> -->
+
+<!-- contact -->
+  <!-- CONTACT -->
+  <section id="contact" style="margin-top:26px">
+    <h2>Hubungi Kami</h2>
+    <div class="form-wrap" style="margin-top:12px">
+      <div class="form-column">
+        <form id="contactForm" novalidate>
+          <div style="display:grid;gap:12px">
+            <div>
+              <label for="name">Nama</label>
+              <input id="name" type="text" name="name" placeholder="Nama lengkap" required>
+              <div id="err-name" class="error">Nama wajib diisi</div>
+            </div>
+
+            <div>
+              <label for="email">Email</label>
+              <input id="email" type="email" name="email" placeholder="nama@domain.com" required>
+              <div id="err-email" class="error">Email tidak valid</div>
+            </div>
+
+            <div style="grid-column:1 / -1">
+              <label for="message">Pesan/masukan</label>
+              <textarea id="message" name="message" placeholder="Tuliskan 1–2 kalimat mengenai kebutuhan Anda" required></textarea>
+              <div id="err-message" class="error">Pesan minimal 10 karakter</div>
+            </div>
+
+            <div style="display:flex;gap:10px;align-items:center">
+              <button type="submit" class="btn">Kirim Permintaan</button>
+              <button type="button" class="btn ghost" onclick="resetForm()">Reset</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="form-column" aria-hidden="false">
+          <div style="font-weight:700;margin-bottom:8px">Alamat & Kontak</div>
+            <div style="color:var(--muted);font-size:14px;margin-bottom:12px">
+              Jl. Contoh No.1, Kota Bogor • email: hello@visidigital.id
+            </div>
+            <div class="card" style="padding:12px">
+              <div style="font-weight:700">Apa yang akan Anda dapat?</div>
+               <ul style="color:var(--muted);margin-left:18px;margin-top:8px">
+                <li>Evaluasi awal & rekomendasi</li>
+                <li>Estimasi waktu & biaya</li>
+                <li>Demo atau sample kerja</li>
+              </ul>
+        </div>
+      </div>
+    </div>
+ </section>
+
+<!-- Footer -->
+
+<footer class="bg-black bg-gradient">
+  <div class="container-xl">
+    <div class="row">
+      <div class="col my-5 mx-3">
+        <h3 class="text-white fw-bold">Expro.</h3>
+        <p class="text-white-50">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit voluptates laboriosam voluptatum quod voluptatibus, debitis cum quas eaque sit explicabo eum fugit recusandae quos quam.</p>
+      </div>
+      <div class="col my-5 mx-3">
+        <h3 class="text-white fw-bold">Menu</h3>
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ">
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-white-50" href="#Home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-white-50" href="#About">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-white-50" href="#Project">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-white-50" href="#Services">Service</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-white-50" href="#FAQ">FAQ</a>
+        </li>
+      </ul>
+      </div>
+      <div class="col my-5 mx-3">
+        <h3 class="text-white fw-bold">Contact</h3>
+        <p class="text-white-50">@shafiramulyana.xpro@gmail.com</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col my-5 fs-6">
+        <h5 class="text-white text-center">© Copyright 2025 shafira, All Right reserved</h5>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- BootStrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+  <!-- Connect JS -->
+   <script src="dist/js/script.js"></script>
+
+
+  <!-- Project Section -->
+  <!-- <section id="project" class="py-5">
+    <div class="container text-center">
+      <h2>Project Kami</h2>
+      <p class="mb-5 text-muted">Beberapa proyek unggulan yang telah kami kerjakan</p>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm">
+            <img src="https://source.unsplash.com/400x300/?building" class="card-img-top" alt="Project 1">
+            <div class="card-body">
+              <h5 class="card-title">Gedung Perkantoran</h5>
+              <p class="card-text">Pembangunan gedung modern di pusat kota.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm">
+            <img src="https://source.unsplash.com/400x300/?construction" class="card-img-top" alt="Project 2">
+            <div class="card-body">
+              <h5 class="card-title">Rumah Mewah</h5>
+              <p class="card-text">Desain elegan dan nyaman untuk keluarga Anda.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm">
+            <img src="https://source.unsplash.com/400x300/?architecture" class="card-img-top" alt="Project 3">
+            <div class="card-body">
+              <h5 class="card-title">Pusat Perbelanjaan</h5>
+              <p class="card-text">Mall modern dengan arsitektur futuristik.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Layanan Section -->
+  <!-- <section id="layanan" class="py-5 bg-light">
+    <div class="container text-center">
+      <h2>Layanan Kami</h2>
+      <p class="mb-5 text-muted">Kami menyediakan berbagai layanan terbaik untuk kebutuhan Anda.</p>
+      <div class="row">
+        <div class="col-md-4">
+          <h5>Desain Arsitektur</h5>
+          <p>Membuat desain bangunan sesuai dengan kebutuhan dan estetika Anda.</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Konstruksi</h5>
+          <p>Pelaksanaan proyek konstruksi dengan tenaga ahli berpengalaman.</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Konsultasi</h5>
+          <p>Kami siap memberikan solusi profesional untuk proyek Anda.</p>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- FAQ Section -->
+  <!-- <section id="faq" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">FAQ</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faq1">
+              Apa layanan utama kami?
+            </button>
+          </h2>
+          <div id="faq1" class="accordion-collapse collapse show">
+            <div class="accordion-body">
+              Kami menyediakan jasa desain, konstruksi, dan konsultasi untuk berbagai jenis bangunan.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">
+              Bagaimana cara bergabung?
+            </button>
+          </h2>
+          <div id="faq2" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              Anda dapat menghubungi kami melalui form kontak atau media sosial kami.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Footer -->
+  <!-- <footer id="footer" class="text-center text-white py-3">
+    <p>&copy; 2025 Expo Construction. All rights reserved.</p>
+  </footer> -->
+
+  <!-- Bootstrap JS -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
+
+  <!-- Navbar Scroll Effect -->
+  <script>
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+  <!-- AOS -->
+     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

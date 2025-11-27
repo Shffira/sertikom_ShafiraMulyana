@@ -1,106 +1,51 @@
-/* ===== NAVBAR STYLE ===== */
-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 80px;
-    }
-
-    .logo img {
-      width: 130px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #0d1440;
-      font-weight: 600;
-      margin: 0 15px;
-      font-size: 14px;
-    }
-
-    nav a.active {
-      color: #f45c00;
-    }
-
-    .btn-kontak {
-      background-color: #fcb400;
-      color: #fff;
-      border: none;
-      padding: 10px 18px;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-
-
-
-/* Hero Section */
-    .hero {
-      background: url(/asset/img/Screenshot\ 2025-11-20\ 114455.png) center/cover no-repeat;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      position: relative;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-    }
-  .site-hero > .container {
-  position: relative;
-  z-index: 2;
+:root{
+  --pink:var(--pink)
 }
 
-.site-hero.overlay {
-  position: relative;
+*{
+  margin:0; padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  outline: none; border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: .2s linear;
+}
+html{
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  overflow-x: hidden;
 }
 
-.site-hero.overlay:before {
-  content: "";
-  background: rgba(0, 0, 0, 0.5);
-  width: 100%;
-  z-index: 1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+header{
+  position: fixed;
+  top: 0; left: 0; right: 0;  
+  background: #fff;
+  padding: 2rem 9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
 }
 
-
-
-
-.site-hero .site-hero-inner {
-  min-height: 750px;
-  height: 100vh;
+header .logo{
+  font-size: 3rem;
+  color: #333;
+  font-weight: bolder;
 }
 
-.site-hero-innerpage, .site-hero-innerpage .site-hero-inner {
-  min-height: 550px;
-  height: 50vh;
+header .logo span{
+  color: var(--pink);
 }
 
-.site-section {
-  padding: 7em 0;
-}
-@media (max-width: 1199.98px) {
-  header .navbar .dropdown-menu:before {
-    display: none;
-  }
+header .navbar a{
+  font-size: 2rem;
+  padding: 0 1.5rem;
+  color: #666;
 }
 
+header .navbar a:hover{
+  color: var(--pink);
+}
