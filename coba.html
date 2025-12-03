@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>VisiDigital — Konsultasi Teknologi</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23007B7A'/><text x='50' y='57' font-size='48' text-anchor='middle' fill='white' font-family='Arial'>V</text></svg>">
+
 <style>
   :root{
     --bg: #fbfcfd;
@@ -37,6 +38,7 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
+    
   }
   
   .brand {display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--accent)}
@@ -47,15 +49,45 @@
   nav a:hover{background:rgba(14,165,164,0.08);color:var(--accent-2)}
 
   /* LAYOUT */
-  .container{max-width:1100px;margin:0 auto;padding:48px 20px}
-  .hero{
-    display:grid;
-    grid-template-columns: 1fr 480px;
-    gap:36px;
-    align-items:center;
-    padding-top:28px;
-    padding-bottom:28px;
-  }
+  
+    .hero {
+    position: relative;
+    height: 100vh;
+    padding: 0 20px;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    /* background: url(/asset/icon/White\ background\ design\ Vectors\ -\ Download\ Free\ High-Quality\ Vectors\ from\ Freepik\ _\ Freepik.jpg); */
+    background-repeat: no-repeat;
+}
+
+/* Overlay opsional biar teks tetap jelas */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    
+    
+}
+
+.hero-text {
+    position: relative;
+  z-index:2;
+  color:white;
+  max-width: 700px;
+}
+      
+    
+    
+   
+
+
+
   .kicker{display:inline-block;background:rgba(14,165,164,0.08);color:var(--accent-2);padding:6px 10px;border-radius:999px;font-weight:700;font-size:12px}
   h1{font-size:34px;margin:18px 0;color:#04123a}
   p.lead{color:var(--muted);font-size:16px;margin-bottom:20px}
@@ -66,94 +98,9 @@
     background:var(--accent); color:white; box-shadow: 0 6px 20px rgba(2,128,128,0.12)
   }
   .btn.ghost{background:transparent;border:1px solid rgba(2,128,128,0.12);color:var(--accent-2);font-weight:700}
-  /* tambahan */
-.services-container{
-    width: 80%;
-    padding: 30px;
-}
-.services-container h2{
-    font-size: 24px;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-.slider-wrapper{
-    position: relative;
-}
-.services-wrapper{
-    display: flex;
-    gap: 20px;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-}
-.service-card{
-    min-width: 230px;
-    height: 330px;
-    border-radius: 12px;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    color: white;
-    flex-shrink: 0;
-}
-.drag-img{
-    width: 150px;
-    position: absolute;
-    cursor: grab;
-}
-.service-card .service-img{
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    filter: brightness(60%);
-    transition: 0,3s ease;
-}
-.service-card:hover .service-img{
-    transform: scale(1.05);
-    filter: brightness(80%);
-}
-.service-top{
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 14px;
-    opacity: 0.9;
-}
-.service-title{
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    font-size: 20px;
-    font-weight: bold;
-}
-   /* Tombol panah */
-    .arrow-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 45px;
-        height: 45px;
-        border-radius: 40%;
-        background: white;
-        border: none;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        cursor: pointer;
-        font-size: 22px;
-    }
-
-    .arrow-left { left: -10px; }
-    .arrow-right { right: -10px; }
-
-    @media (max-width: 600px) {
-        .service-card {
-            min-width: 70%;
-        }
-        .arrow-btn {
-            display: none;
-        }
-    }
-
-
+  
+  
+  
 
 
   /* card */
@@ -162,84 +109,100 @@
     border-radius:var(--radius);
     padding:18px;
     box-shadow: 0 6px 20px rgba(15,23,36,0.06);
+    flex: 1 1 300px;
   }
-/* layanan */
-  .services-container {
-        width: 100%;
-        padding: 30px;
-    }
 
-    .services-container h2 {
-        font-size: 24px;
-        margin-bottom: 20px;
-        font-weight: bold;
-    }
 
-    .services-wrapper {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  padding-bottom: 10px;
-  scroll-snap-type: x mandatory; /* opsional: biar snap per card */
+/* my service */
+.services-section {
+    text-align: center;
+    height: fit-content;
+    padding: 50px 20px;
+    font-family: 'Poppins', sans-serif;
 }
 
-.services-wrapper::-webkit-scrollbar {
-  height: 8px;
-}
-
-.services-wrapper::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 10px;
+.services-container {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    justify-content: center;
 }
 
 .service-card {
-  min-width: 260px; /* card dibatasi agar tidak melebar */
-  height: 380px;
-  border-radius: 16px;
-  overflow: hidden;
-  flex-shrink: 0; /* wajib biar width tetap */
-  position: relative;
-  scroll-snap-align: start; /* opsional */
+    background: #fff;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 15px 35px rgba(0,0,0,0.15);
 }
 
 .service-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 20px;
 }
 
 .service-card h3 {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  color: white;
-  font-size: 22px;
-  font-weight: 700;
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 700;
 }
 
+.service-card p {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #666;
+}
 
-  /* SERVICES grid */
-  .services{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
-    margin-top:8px;
-  }
-  .service{
-    padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(0,123,122,0.03), rgba(255,255,255,0.6));
-  }
-  .service h4{margin:8px 0 6px}
-  .service p{color:var(--muted);font-size:14px}
+.arrow {
+    margin-top: 15px;
+    font-size: 22px;
+    color: #333;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
+.arrow:hover {
+    transform: translateX(5px);
+}
+@media (max-width: 992px) {
+    .services-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .services-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+ 
   /* ABOUT + PORTFOLIO */
-  .two-col{display:grid;grid-template-columns:1fr 380px;gap:22px;align-items:start}
+  .two-col{display:grid;grid-template-columns:1fr 380px;gap:22px;align-items:start; height:400px;}
   .about p{color:var(--muted);font-size:15px}
+  
+  /* kanan foto */
+   .about image{width: 80%;
+    margin:  auto;
+    
+    
+  }
 
 .testimonials {
+  
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 25px;
-  padding: 40px;
+  padding: 35px;
+  
 }
 .centertest{
   text-align: center;
@@ -314,72 +277,66 @@ font-size: 16px;
   font-size: 14px;
   color: #777;
 }
+/* porto */
 
 
-  /* .client-logos{
-    display:flex;flex-direction:column;gap:10px;
-  } */
-  /* .client-section {
-    background: #fff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0px 5px 20px rgba(0,0,0,0.05);
-    width: fit-content;
-} */
+.program-container {
+   display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 kolom */
+  gap: 30px; /* jarak antar card */
+  width: 100%;
 
-/* .client-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 150px);
-    gap: 20px;
-    margin-top: 15px;
-    padding: 20px;
-} */
+  /* display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 40px; */
+}
 
-/* .client-item {
-    background: linear-gradient(180deg, #ffffff, #f3f6f9);
-    border-radius: 15px;
-    height: 120px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-} */
-
-/* .client-item img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    opacity: 0.9;
-    transition: 0.3s;
-} */
-/* .item{
+.program-card {
+  background-color: #f7f8fb;
+  border-radius: 15px;
+  
+  padding: 20px;
+  max-width: 295px;
+  height: 280px;
   text-align: center;
-} */
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
 
-/* .client-item img:hover {
-    opacity: 1;
-    transform: scale(1.05);
-} */
-/* .caption{
-  margin-top: 10px;
-  font-size: 16px;
-  color: #333;
-} */
+.program-card img {
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  display: block;
+  object-fit:contain;
+  height: 200px;
 
+}
 
-
-  /* .logos-row{display:flex;gap:12px;flex-wrap:wrap}
-  .client{
-    width:120px;height:64px;border-radius:10px;background:linear-gradient(180deg,#fff,#f7fafb);
-    display:flex;align-items:center;justify-content:center;border:1px solid rgba(10,10,10,0.03);
-    font-weight:700;color:#334155
-  } */
-
+.program-card h3 {
+  text-align: center;
+  color: #0d1440;
+  margin-bottom: 10px;
+}
   /* CONTACT */
   #contact{margin-top:6px}
-  .form-wrap{display:grid;gap:12px;grid-template-columns:1fr 1fr}
-  .form-column{background:var(--card);padding:18px;border-radius:12px;box-shadow: 0 6px 20px rgba(15,23,36,0.04)}
-  label{display:block;font-size:13px;color:#334155;margin-bottom:6px;font-weight:600}
+  .form-wrap{
+  display:grid;
+  gap:12px;
+  grid-template-columns:1fr 1fr}
+  .form-column{
+  background:var(--card);
+  padding:18px;
+  border-radius:12px;
+  box-shadow: 0 6px 20px rgba(15,23,36,0.04)}
+  label{
+  display:block;
+  font-size:13px;
+  color:#334155;
+  margin-bottom:6px;
+  font-weight:600}
   input[type="text"],input[type="email"],textarea{
     width:100%;padding:10px;border-radius:8px;border:1px solid rgba(15,23,36,0.08);font-size:14px;background:transparent;
   }
@@ -426,25 +383,38 @@ font-size: 16px;
   .delay-2{animation-delay:240ms}
   .delay-3{animation-delay:360ms}
   @keyframes fadeIn{to{opacity:1;transform:none}}
+
+  /* RESPONSIVE */
+  @media (max-width:1000px){
+    .hero{grid-template-columns:1fr;gap:22px;padding-bottom:18px}
+    .two-col{grid-template-columns:1fr}
+    .services{grid-template-columns:1fr 1fr}
+    .form-wrap{grid-template-columns:1fr}
+  }
+  @media (max-width:520px){
+    h1{font-size:24px}
+    .services{grid-template-columns:1fr}
+    nav{display:none}
+    header{padding:12px 18px}
+  }
+
+  /* subtle entrance */
+  .fade-in{opacity:0;transform:translateY(8px);animation:fadeIn 700ms ease forwards}
+  .delay-1{animation-delay:120ms}
+  .delay-2{animation-delay:240ms}
+  .delay-3{animation-delay:360ms}
+  @keyframes fadeIn{to{opacity:1;transform:none}}
 </style>
-</head>
-<body>
+
 
 <header>
   <!-- SVG LOGO (fiktif) -->
   <a class="brand" href="#hero" aria-label="VisiDigital - Beranda">
     <span class="logo-mark" aria-hidden="true">
-      <!-- simple abstract V+D mark -->
-      <!-- <svg viewBox="0 0 100 100" width="42" height="42" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"> -->
-        <!-- <defs>
-          <linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#00b3ad"/><stop offset="1" stop-color="#007b7a"/></linearGradient>
-        </defs>
-        <rect width="100" height="100" rx="18" fill="url(#g1)"/>
-        <path d="M26 70 L44 30 L56 30 L74 70 Z" fill="white" opacity="0.95"/>
-        <circle cx="75" cy="25" r="10" fill="#ffffff" opacity="0.9"/>
-      </svg>
-    </span> -->
-    <h3>VisiDigital</h3>
+     
+    <img src="/asset/img/ChatGPT Image Dec 3, 2025, 02_26_55 PM.png" alt=""
+                width="100"
+                height="60">
   </a>
 
   <nav aria-label="Main">
@@ -457,101 +427,69 @@ font-size: 16px;
 
 <main class="container">
   <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="fade-in delay-1">
-      <span class="kicker">Solusi & Konsultasi </span>
-      <h1>Solusi Digital Terintegrasi <br>untuk Pertumbuhan Bisnis Anda</h1>
-      <p class="lead">Membantu Perusahaan Bertumbuh dengan Teknologi yang Efisien.</p>
+  
+<section id="hero" class="hero">
+    <div class="hero-text">
+        <span class="kicker">Solusi & Konsultasi</span>
+        <h1>Solusi Digital Terintegrasi <br>untuk Pertumbuhan Bisnis Anda</h1>
+        <p class="lead">Membantu Perusahaan Bertumbuh dengan Teknologi yang Efisien.</p>
 
-      <div class="cta-row">
-        <button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Minta Konsultasi Gratis</button>
-        <button class="btn ghost" onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})">Lihat Klien</button>
-      </div>
+        <div class="cta-row">
+            <button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+                Minta Konsultasi Gratis
+            </button>
 
-      <!-- layanan ringkas -->
-       <div class="services-container">
-    <h2>Popular professional services</h2>
-
-
-    <div class="services-wrapper">
-  <div class="service-card">
-    <img src="https://i.pinimg.com/736x/e3/7b/63/e37b637d3fd00813d025825457843454.jpg" />
-    <h3>WordPress</h3>
-  </div>
-
-  <div class="service-card">
-    <img src="https://i.pinimg.com/1200x/af/68/0a/af680a3836cd4705408de9f88d65cad7.jpg" />
-    <h3>Voice Over</h3>
-  </div>
-
-  <div class="service-card">
-    <img src="https://i.pinimg.com/736x/19/a9/8d/19a98d6b3c5db900dd2155486f1f8587.jpg" />
-    <h3>Video Explainer</h3>
-  </div>
-
-  <div class="service-card">
-    <img src="https://i.pinimg.com/originals/e4/af/ba/e4afbad000b59901ee00c6d67ddc9adc.gif" />
-    <h3>Social Media</h3>
-  </div>
-</div>
-
-    
-      <!-- <div style="margin-top:18px" class="card">
-        <div style="display:flex;gap:14px;align-items:center">
-          <div style="width:46px;height:46px;border-radius:10px;background:linear-gradient(180deg,#e9f8f7,#fbffff);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--accent)">01</div>
-          <div>
-            <div style="font-weight:800">Fully Responsive</div>
-            <div style="color:var(--muted);font-size:13px">Desain yang tampil sempurna di perangkat apa pun</div>
-          </div>
+            <button class="btn ghost" onclick="document.getElementById('').scrollIntoView({behavior:'smooth'})">
+                Lihat Klien
+            </button>
         </div>
-      </div>
-    </div> -->
-
-    <!-- illustration SVG -->
-    <div class="illus fade-in delay-2" aria-hidden="true">
-      <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" role="img">
-        <defs>
-          <linearGradient id="lgA" x1="0" x2="1">
-            <stop offset="0" stop-color="#00b3ad" stop-opacity="0.95"/>
-            <stop offset="1" stop-color="#007b7a" stop-opacity="0.95"/>
-          </linearGradient>
-        </defs>
-        <rect x="0" y="0" width="800" height="600" rx="18" fill="transparent"/>
-
-        
-        <!-- abstract shapes -->
-        <!-- <circle cx="170" cy="140" r="90" fill="#e6fffb"/>
-        <rect x="320" y="80" width="320" height="220" rx="18" fill="#f7fcfd"/>
-        <path d="M120 420 Q240 320 380 420 T640 420" fill="none" stroke="url(#lgA)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
-        <! device mockup -->
-        <!-- <rect x="360" y="110" width="220" height="140" rx="12" fill="#ffffff" stroke="#e6eef0"/>
-        <rect x="382" y="132" width="176" height="18" rx="6" fill="#f1f6f6"/>
-        <rect x="382" y="158" width="176" height="46" rx="6" fill="#eaf8f7"/>
-        accent dot -->
-        <!-- <circle cx="660" cy="110" r="24" fill="#fff"/>
-        <circle cx="662" cy="112" r="12" fill="#0ea5a4"/> -->
-      </svg>
     </div>
-  </section>
+</section>
 
-  <!-- LAYANAN -->
-  <!-- <section id="layanan" style="margin-top:8px" class="fade-in delay-3">
+
+
+
+
+
+  <!-- my service -->
+   <div class="services-section">
     <h2>Layanan Kami</h2>
-    <div class="services" aria-label="Daftar layanan">
-      <div class="service card">
-        <h4>Strategi & Konsultasi</h4>
-        <p>Audit teknis, roadmap digital, dan rekomendasi prioritas implementasi.</p>
-      </div>
-      <div class="service card">
-        <h4>Pembuatan One-Page & Website</h4>
-        <p>Website responsif, cepat, dan teroptimasi untuk konversi bisnis.</p>
-      </div> -->
-      <!-- <div class="service card">
-        <h4>Optimasi & Monitoring</h4>
-        <p>Performa, keamanan, dan penerapan best practices operasional.</p>
-      </div>
+    <p class="sub-text">Hai!, Kami menawarkan berbagai layanan yang dapat membantu anda.</p>
+
+    <div class="services-container">
+        <!-- CARD 1 -->
+        <div class="service-card">
+            <img src="/asset/img/download (2).jpg" alt="UI UX">
+            <h3>UI/UX Designer</h3>
+            <p>Di sinilah pemecahan masalah bertemu dengan dampak visual.</p>
+            <div class="arrow">➜</div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="service-card">
+            <iframe src="https://assets.pinterest.com/ext/embed.html?id=492649952943035" height="295" width="345" frameborder="0" scrolling="no" ></iframe>
+            <h3>Web Design</h3>
+            <p>Meluncurkan situs web yang menangkap merek Anda dan memaksimalkan pendapatan.</p>
+            <div class="arrow">➜</div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="service-card">
+            <img src="/asset/img/download (3).jpg" alt="Graphic Design">
+            <h3>Graphic Design</h3>
+            <p>Mengkomunikasi ide secara visual dengan desain kreatif.</p>
+            <div class="arrow">➜</div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="service-card">
+            <img src="https://i.pinimg.com/1200x/4c/91/60/4c916078827cceeb404a31ce904a4120.jpg" alt="Instructor">
+            <h3>Instructor</h3>
+            <p>Instruktur profesional dengan pengalaman bertahun-tahun dalam bimbingan teknologi.</p>
+            <div class="arrow">➜</div>
+        </div>
     </div>
-  </section> -->
+</div>
 
   <!-- ABOUT & PORTFOLIO -->
   <section id="about" style="margin-top:26px">
@@ -566,20 +504,24 @@ font-size: 16px;
           <li>Validasi teknis dan liveness monitoring.</li>
         </ul>
       </div>
+    
+          <div class="kanan">
+                <img src="/asset/img/Nice.jpg" alt="siswa smk"
+                    width="500">
+        </div>
     </div>
   </section>
  
  
-  <section class="centertest">
+  <section class ="centertest">
     
     <h2>Testimoni Klien <span>VisiDigital</span></h2>
     <p>Simak tanggapan positif mereka yang telah bertransformasi bersama VisiDigital.</p>
-    <section class="testimonials">
-    
+    <section class  ="testimonials">
+     
       <div class="testimonial-card">
         <p class="quote"> ⭐ Testimoni 1
          “Kami dibantu dari nol mulai dari branding, website, sampai sosial media. Semua prosesnya transparan dan hasilnya profesional banget.”
-           — Lestari Wijaya, Founder TastyBox
         </p>
 
           <div class="profile">
@@ -595,10 +537,7 @@ font-size: 16px;
       <p class="quote">
         ⭐ Testimoni 2 <br>
 
-          “Layanan yang diberikan sangat membantu proses digitalisasi bisnis kami. Timnya responsif dan solusi yang ditawarkan benar-benar relevan dengan kebutuhan operasional perusahaan.”
-
-          Rama Prasetyo
-          — Vina Hartono, Owner Lumiere Beauty”
+          “Layanan yang diberikan sangat membantu proses digitalisasi bisnis kami. Timnya responsif dan solusi yang ditawarkan benar-benar relevan.”
       </p>
 
     <div class="profile">
@@ -614,10 +553,9 @@ font-size: 16px;
     <p class="quote">
       ⭐ Testimoni 3
 
-      “Platform digital yang mereka bangun meningkatkan efisiensi kerja tim kami lebih dari 40%. Desain antarmuka   rapi, alur kerja mudah, dan implementasi sangat cepat.”
+      “Platform digital yang mereka bangun meningkatkan efisiensi kerja tim kami lebih dari 40%. Desain antarmuka   rapi, alur kerja mudah.”
 
-      Nabila Putri
-      Product Lead – NexaGroup”
+      
     </p>
 
     <div class="profile">
@@ -633,10 +571,7 @@ font-size: 16px;
     <p class="quote">
       ⭐ Testimoni 4 <br>
 
-      “Timnya profesional dan komunikatif. Proses pengembangan aplikasi berjalan terstruktur dari awal hingga rilis.    Hasilnya stabil, cepat, dan mudah diintegrasikan.”
-
-      Aulia Wicaksana
-      CTO – Kinetix Global”
+      “Timnya profesional dan komunikatif. Proses pengembangan aplikasi berjalan terstruktur dari awal hingga rilis. 
     </p>
 
         <div class="profile">
@@ -653,33 +588,32 @@ font-size: 16px;
    
 
   <!-- PORTFOLIO DETAIL (opsional) -->
+   <div data-aos="fade-up">
   <section id="portfolio" style="margin-top:26px">
     <h2>Portofolio Singkat</h2>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px">
-      <!-- simple cards with placeholder SVG icons -->
-      <div class="card" style="display:flex;gap:12px;align-items:center">
-        <svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="8" fill="#f1fdfc"/><path d="M12 32h24v-4H12zM12 24h24v-4H12zM12 16h24v-4H12z" fill="#007b7a"/></svg>
-        <div>
-          <div style="font-weight:700">Website Profil</div>
-          <div style="color:var(--muted);font-size:13px">One-page profile & lead form</div>
-        </div>
-      </div>
-      <div class="card" style="display:flex;gap:12px;align-items:center">
-        <svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="8" fill="#f9fbff"/><path d="M10 32h28v-2H10zM10 22h28v-2H10z" fill="#007b7a"/></svg>
-        <div>
-          <div style="font-weight:700">Sistem Internal</div>
-          <div style="color:var(--muted);font-size:13px">Optimasi performa & backup</div>
-        </div>
-      </div>
-      <div class="card" style="display:flex;gap:12px;align-items:center">
-        <svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="8" fill="#fff7fb"/><path d="M24 12l8 14H16z" fill="#007b7a"/></svg>
-        <div>
-          <div style="font-weight:700">Rebrand & UI</div>
-          <div style="color:var(--muted);font-size:13px">Brand kit dan UI sederhana</div>
-        </div>
-      </div>
-    </div>
-  </section>
+          <div class="program-container">
+            <!-- Vocational Program -->
+            <div class="program-card">
+              <img src="/asset/img/one-page.jpg">
+              <h3>Website Profil One-Page</h3>
+               
+          </div>
+
+              <!-- Professional Program -->
+              <div class="program-card professional">
+                <img src="/asset/img/sisteminternal.jpg">
+                <h3>Sistem Internal</h3>
+               
+              </div>
+
+            <!-- Religius Program -->
+            <div class="program-card">
+              <img src="/asset/img/rebrand&UI.jpg" alt="Religius Program">
+              <h3>Rebrand & UI</h3>
+            </div>
+          </div>
+        
+      
 
   <!-- CONTACT -->
   <section id="contact" style="margin-top:26px">
